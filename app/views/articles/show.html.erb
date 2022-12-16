@@ -10,8 +10,11 @@
                   } %></li>
 </ul>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+<hr style="width: 100%; border-top: 8px solid #bbb; border-radius: 5px;">
+<% if @article.status == 'loud' %>
+  <h2>Comments</h2>
+  <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+<% end %>
