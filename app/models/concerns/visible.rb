@@ -15,6 +15,10 @@ module Visible
       def subdued_count
         where(status: 'subdued').count
       end
+
+      def archived_count
+        where(status: 'archived').count
+      end
     end
 
     def status_is
