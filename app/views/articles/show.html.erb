@@ -2,6 +2,13 @@
 
 <p><%= @article.body %></p>
 
+<% if @article.status == 'loud' %>
+<audio controls>
+  <source src="/airhorn.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
+<% end %>
+
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {
