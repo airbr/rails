@@ -13,7 +13,7 @@ class ArticleTest < ActiveSupport::TestCase
   end
 
   test "correctly saved article with characters" do
-    article = Article.new(title: "Hello Rails3", body: "Way more than ten characters", status: "subdued")
+    article = Article.new(title: "Hello Rails3", body: "Way more than ten characters", status: "subdued", user: 1)
     assert article.save
   end
 
