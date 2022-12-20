@@ -1,15 +1,18 @@
-<div>
+<div class="flex flex-col items-center">
+<a href="/"><h1>Home</h1></a>
+
+<div class="text-center">
 <% if @article.status == 'loud' %>
 <audio controls>
   <source src="/airhorn.mp3" type="audio/mp3">
   Your browser does not support the audio tag.
 </audio>
 <% end %>
-<h1><%= @article.title %></h1>
+<h1>TITLE: <%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<p>CONTENT: <%= @article.body %></p>
 
-<ul>
+<ul class="underline">
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
@@ -27,4 +30,5 @@
   <h2>Add a comment:</h2>
   <%= render 'comments/form' %>
 <% end %>
+</div>
 </div>

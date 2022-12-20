@@ -1,5 +1,10 @@
+<div class="flex flex-col items-center">
+<a href="/"><h1>Home</h1></a>
+
+<br>
+<br>
 Our blog has:
-<ul>
+<ul class="list-disc p-8">
 <li>
 <%= Article.loud_count %> "Loud" articles where users can comment,
 </li>
@@ -10,25 +15,27 @@ Our blog has:
 and counting!
 </li>
 </ul>
-<%= link_to "Make a New ☕", new_article_path, {style: "font-size: 44px;"} %>
-
-<h4>Loud!</h4>
-<ul>
+<%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
+<br>
+<br>
+<h4 class="pl-6">Loud articles:</h4>
+<ul class="list-disc">
   <% @articles.each do |article| %>
     <% if article.status == "loud" %>
       <li>
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article, {class: "underline"} %>
       </li>
     <% end %>
   <% end %>
 </ul>
-<h4>subdued...</h4>
-<ul>
+<h4 class="pl-6">subdued articles:</h4>
+<ul class="list-disc pb-8">
   <% @articles.each do |article| %>
     <% if article.status == "subdued" %>
       <li>
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article, {class: "underline"} %>
       </li>
     <% end %>
   <% end %>
 </ul>
+</div>
