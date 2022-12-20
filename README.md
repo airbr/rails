@@ -8,9 +8,11 @@ Commands to be aware of include:
 
 `bin/rails server` serve the application
 
-`./bin/dev` to serve the application with tailwind
+`./bin/dev` to serve the application with dev tailwind
 
 `bin/rails db:migrate` run the migrations
+
+`bin/rails test -v` to run the basic tests 
 
 
 
