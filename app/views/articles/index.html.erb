@@ -1,8 +1,8 @@
 <div class="flex flex-col items-center">
 <a href="/"><h1>Home</h1></a>
 
-<p class="notice"><%= flash[notice] %></p>
-<p class="alert"><%= flash[alert] %></p>
+<p class="notice"><%= flash[:notice] %></p>
+<p class="alert"><%= flash[:alert] %></p>
 <br>
 <% if current_user %>
   <li><%= link_to "Sign out", destroy_user_session_path, method: :get  %></li>
@@ -31,7 +31,7 @@ and counting!
 
 <ul class="list-disc p-8">
 <li>
-<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments!
+<%# <%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments! %>
 </li>
 </ul>
 <br>
@@ -56,4 +56,5 @@ and counting!
     <% end %>
   <% end %>
 </ul>
+
 </div>

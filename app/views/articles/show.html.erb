@@ -8,6 +8,9 @@
   Your browser does not support the audio tag.
 </audio>
 <% end %>
+
+<h1>Author: <%= @author.email %></h1>
+
 <h1>TITLE: <%= @article.title %></h1>
 
 <p>CONTENT: <%= @article.body %></p>
@@ -15,7 +18,6 @@
 <% if flash[:notice] %>
   <h1 class="notice"><%= flash[:notice] %></h1>
 <% end %>
-
 
 <ul class="underline">
   <li><%= link_to "Edit", edit_article_path(@article) %></li>

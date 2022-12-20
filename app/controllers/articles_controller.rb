@@ -5,21 +5,29 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    @trending = Article.order("comments_count DESC").first
+    # @trending = Article.order("comments_count DESC").first
   end
 
   def show
     @article = Article.find(params[:id])
+    @author = User.find(@article.user)
+
   end
 
   def new
+    if !user_signed_in?
+      flash[:notice] = "Login to post"
+      redirect_to "/"
+    end  
+
     @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
-
-    if @article.save
+    @article.user = current_user.id
+    
+    if @article.save!
       flash[:notice] = "You created a post! Awesome"
       redirect_to @article
     else
@@ -50,6 +58,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :status)
+      params.require(:article).permit(:title, :body, :status, :user)
     end
 end
