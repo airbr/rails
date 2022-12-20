@@ -20,10 +20,6 @@ module Visible
         where(status: 'archived').count
       end
     end
-
-    def status_is
-      status
-    end  
   
     def archived?
       status == 'archived'

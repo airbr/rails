@@ -17,6 +17,12 @@ and counting!
 </ul>
 <%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
 <br>
+
+<ul class="list-disc p-8">
+<li>
+<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments!
+</li>
+</ul>
 <br>
 <h4 class="pl-6">Loud articles:</h4>
 <ul class="list-disc">
@@ -24,6 +30,7 @@ and counting!
     <% if article.status == "loud" %>
       <li>
         <%= link_to article.title, article, {class: "underline"} %>
+        <%= article.comments.length %> comments
       </li>
     <% end %>
   <% end %>

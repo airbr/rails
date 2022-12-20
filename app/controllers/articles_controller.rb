@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+
+    @trending = Article.order("comments_count DESC").first
   end
 
   def show
