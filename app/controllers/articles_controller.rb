@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
+      flash[:notice] = "You created a post! Awesome"
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
