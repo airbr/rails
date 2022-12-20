@@ -1,11 +1,8 @@
-# README
-
-# IN progress
+* A blog using Rails 7.0.4
 
 This was made primarily with the content from the Rails guide [here](https://guides.rubyonrails.org/getting_started.html)
 
 Commands to be aware of include:
-
 
 `bundle install` to install the bundle of gems
 
@@ -16,15 +13,4 @@ Commands to be aware of include:
 `bin/rails db:migrate` run the migrations
 
 
-Things you may want to cover:
 
-* Ruby version
-* System dependencies
-* Configuration
-* Database creation
-* Database initialization
-* How to run the test suite
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
-
-* ...
