@@ -19,6 +19,7 @@
   <h1 class="notice"><%= flash[:notice] %></h1>
 <% end %>
 
+<% if current_user and @author.id == current_user.id %>
 <ul class="underline">
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {
@@ -26,16 +27,21 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+<% end %>
 
 
 </div>
 <div>
-<% if @article.status == 'loud' %>
-  <h2>Comments</h2>
-  <%= render @article.comments %>
+<% if user_signed_in? %>
 
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
+  <% if @article.status == 'loud' %>
+    <h2>Comments</h2>
+    <%= render @article.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+  <% end %>
+
 <% end %>
 </div>
 </div>
