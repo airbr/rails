@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: MyStringone
+  body: MyTextone
   status: subdued
+  user: 1
 
 two:
   title: MyString
   body: MyText
   status: subdued
+  user: 2

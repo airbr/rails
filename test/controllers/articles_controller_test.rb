@@ -2,26 +2,28 @@ require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   # called before every single test
-  # setup do
-  #    @article = articles(:one)
+  setup do
+     @article = articles(:one)
+     @articletwo = articles(:two)
 
-  #    @articletwo = articles(:two)
-  # end
+     @user = users(:one)
+     @usertwo = users(:two)
+  end
 
-  # # called after every single test
-  # teardown do
-  #   # when controller is using cache it may be a good idea to reset it afterwards
-  #   Rails.cache.clear
-  # end
+  # called after every single test
+  teardown do
+    # when controller is using cache it may be a good idea to reset it afterwards
+    Rails.cache.clear
+  end
 
-  # test "should show article" do
-  #   # Reuse the @article instance variable from setup
-  #   get article_url(@article)
-  #   assert_response :success
+  test "should show article" do
+    # Reuse the @article instance variable from setup
+    get article_url(@article)
+    assert_response :success
 
-  #   get article_url(@articletwo)
-  #   assert_response :success
-  # end
+    get article_url(@articletwo)
+    assert_response :success
+  end
 
   # test "should destroy article" do
   #   assert_difference("Article.count", -1) do

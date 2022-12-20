@@ -5,13 +5,14 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    # @trending = Article.order("comments_count DESC").first
+    if @articles.length
+      @trending = Article.order("comments_count DESC").first
+    end  
   end
 
   def show
-    @article = Article.find(params[:id])
-    @author = User.find(@article.user)
-
+      @article = Article.find(params[:id])
+      @author = User.find(@article.user)
   end
 
   def new

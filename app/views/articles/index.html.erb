@@ -5,6 +5,7 @@
 <p class="alert"><%= flash[:alert] %></p>
 <br>
 <% if current_user %>
+  <li><%= current_user.email %></li>
   <li><%= link_to "Sign out", destroy_user_session_path, method: :get  %></li>
 <% else %>
   <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -26,15 +27,17 @@ Our blog has:
 and counting!
 </li>
 </ul>
-<%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
-<br>
 
+<% if current_user %>
+<%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
+<% end %>
 <ul class="list-disc p-8">
+<% if @trending %>
 <li>
-<%# <%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments! %>
+<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments!
 </li>
+<% end %>
 </ul>
-<br>
 <h4 class="pl-6">Loud articles:</h4>
 <ul class="list-disc">
   <% @articles.each do |article| %>
