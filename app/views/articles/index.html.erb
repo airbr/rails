@@ -36,13 +36,26 @@ Our blog has:
 and counting!
 </li>
 </ul>
+
+<%# <div x-data="{ open: false }">
+    <button @click="open = ! open">Toggle</button>
+ 
+    <div x-show="open" @click.outside="open = false">
+    <div x-data="{ count: 0 }">
+    <button x-on:click="count++">Increment</button>
+ 
+    <span x-text="count"></span>
+    </div>
+    </div>
+</div> %>
+
 <% if current_user %>
 <%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
 <% end %>
 <ul class="list-disc p-8">
 <% if @trending %>
 <li>
-<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments!
+<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments and <%= @trending.likes.count %> <%= (@trending.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 </li>
 <% end %>
 </ul>
@@ -67,5 +80,4 @@ and counting!
     <% end %>
   <% end %>
 </ul>
-
 </div>
