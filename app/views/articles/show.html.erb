@@ -15,8 +15,21 @@
 
 <p>CONTENT: <%= @article.body %></p>
 
+<p><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
 <% if flash[:notice] %>
   <h1 class="notice"><%= flash[:notice] %></h1>
+<% end %>
+
+<% if current_user %>
+
+<% pre_like = @article.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', article_like_path(@article, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', article_likes_path(@article), method: :post %>
+<% end %>
+
 <% end %>
 
 <% if current_user and @author.id == current_user.id %>

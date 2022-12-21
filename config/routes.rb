@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "articles#index"
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  resources :articles do
+    resources :likes
+  end
 
   resources :articles do
     resources :comments
