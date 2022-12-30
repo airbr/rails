@@ -1,14 +1,18 @@
 * A blog using Rails 7.0.4
 
-This was made primarily with the content from the Rails guide [here](https://guides.rubyonrails.org/getting_started.html).
+* This blogs current version is v0.0.5
+
+![tests badge](https://img.shields.io/badge/Tests-Passing-Green.svg)
+
+This was initially made primarily with the content from the Rails guide [here](https://guides.rubyonrails.org/getting_started.html).
 
 ### Commands to be aware of include:
 
 `bundle install` to install the bundle of gems
 
-`bin/rails server` serve the application
-
 `./bin/dev` to serve the application with dev tailwind
+
+`bin/rails db:create` run the migrations
 
 `bin/rails db:migrate` run the migrations
 
