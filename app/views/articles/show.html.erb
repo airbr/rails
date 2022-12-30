@@ -16,8 +16,9 @@
 <p>CONTENT: <%= @article.body %></p>
 
 <br>
-<p class="underline><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
+<!--
+<p class="underline"><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+-->
 <% if flash[:notice] %>
   <h1 class="notice"><%= flash[:notice] %></h1>
 <% end %>
