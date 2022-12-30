@@ -1,10 +1,15 @@
+![tests badge](https://img.shields.io/badge/Tests-Passing-Green.svg)
+
 * A blog using Rails 7.0.4
 
 * This multi-user blog's current version is `v0.0.5`
 
-![tests badge](https://img.shields.io/badge/Tests-Passing-Green.svg)
+# Recent Lighthouse Scores:
+
+![Screen Shot 2022-12-30 at 12 36 47 AM](https://user-images.githubusercontent.com/18056682/210050978-261538a1-5bbd-40bf-8e91-0b7ccc24e468.png)
 
 This was initially made primarily with the content from the Rails guide [here](https://guides.rubyonrails.org/getting_started.html).
+
 
 ### Commands to be aware of include:
 
