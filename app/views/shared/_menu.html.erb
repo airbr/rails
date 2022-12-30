@@ -1,4 +1,4 @@
-<div class="p-2 text-white bg-slate-400 flex flex-row justify-between">
+<div class="p-2 text-black bg-slate-200 flex flex-row justify-between">
 <div class="pl-4">
 <a href="/"><h1>Home</h1></a>
 </div>
@@ -6,6 +6,7 @@
 <% if current_user %>
   <div class="">
   <span class="px-1"><%= current_user.email %></span>
+  <br>
   <span class="px-1"><%= link_to "Sign out", destroy_user_session_path, method: :get  %></span>
   </div>
 <% else %>
