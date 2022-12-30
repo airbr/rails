@@ -22,17 +22,6 @@
   <h1 class="notice"><%= flash[:notice] %></h1>
 <% end %>
 
-<% if current_user %>
-
-<% pre_like = @article.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', article_like_path(@article, pre_like), method: :delete %>
-<% else %>
-  <%= button_to 'Like', article_likes_path(@article), method: :post, :class => "underline" %>
-<% end %>
-
-<% end %>
-
 <% if current_user and @author.id == current_user.id %>
 <ul class="underline">
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
@@ -45,11 +34,13 @@
 
 
 </div>
+<br>
+<br>
 <div>
 <% if user_signed_in? %>
 
   <% if @article.status == 'loud' %>
-    <h2>Comments</h2>
+    <h2>Comments section - enjoy coffee! be nice!</h2>
     <%= render @article.comments %>
 
     <h2>Add a comment:</h2>
