@@ -20,10 +20,10 @@ The purpose of this multi-user blog is to write fun messages and talk about coff
 Our wonderful coffee blog has:
 <ul class="p-8">
 <li>
-<%= Article.loud_count %> "Loud" coffee articles where users can comment
+<%= Article.loud_count %> "Loud" 📣 coffee articles where users can comment
 </li>
 <li>
-<%= Article.subdued_count %> "Subdued" coffee articles where we can observe
+<%= Article.subdued_count %> "Subdued" 🔇 coffee articles where we can observe
 </li>
 </ul>
 
@@ -31,13 +31,12 @@ Our wonderful coffee blog has:
 <div class="bg-slate-200 px-8">
 <%= link_to "Make a New ☕ Post", new_article_path, {class: "underline"} %>
 </div>
+<% else %>
+<div class="bg-slate-200 px-8">
+<h4>Log in with an email as a username to post</h4>
+</div>
 <% end %>
 <ul class="list-disc p-8">
-<% if @trending %>
-<li>
-<%= link_to @trending.title, @trending, {class: "underline"} %> is the Trending Topic with the Most Comments and <%= @trending.likes.count %> <%= (@trending.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-</li>
-<% end %>
 </ul>
 <h4 class="pl-6">📣 Loud articles: 📣</h4>
 <ul class="list-disc">
@@ -61,4 +60,8 @@ Our wonderful coffee blog has:
     <% end %>
   <% end %>
 </ul>
+<br>
+<br>
+<h3>v0.0.4</h3>  
+<h3 class="text-blue-500 underline"><a href="https://github.com/airbr"> The code for this blog, and my Github </a></h3>
 </div>

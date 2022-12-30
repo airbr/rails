@@ -1,5 +1,4 @@
 <div class="flex flex-col items-center">
-<a href="/"><h1>Home</h1></a>
 
 <div class="text-center">
 <% if @article.status == 'loud' %>
@@ -10,12 +9,14 @@
 <% end %>
 
 <h1>Author: <%= @author.email %></h1>
-
+<br>
 <h1>TITLE: <%= @article.title %></h1>
+<br>
 
 <p>CONTENT: <%= @article.body %></p>
 
-<p><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<br>
+<p class="underline><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
 <% if flash[:notice] %>
   <h1 class="notice"><%= flash[:notice] %></h1>
@@ -27,7 +28,7 @@
 <% if pre_like %>
   <%= button_to 'Unlike', article_like_path(@article, pre_like), method: :delete %>
 <% else %>
-  <%= button_to 'Like', article_likes_path(@article), method: :post %>
+  <%= button_to 'Like', article_likes_path(@article), method: :post, :class => "underline" %>
 <% end %>
 
 <% end %>
