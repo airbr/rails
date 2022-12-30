@@ -1,6 +1,6 @@
 * A blog using Rails 7.0.4
 
-* This blogs current version is v0.0.5
+* This multi-user blog's current version is `v0.0.5`
 
 ![tests badge](https://img.shields.io/badge/Tests-Passing-Green.svg)
 
