@@ -38,7 +38,7 @@ Our wonderful coffee blog has:
 <% end %>
 <ul class="list-disc p-8">
 </ul>
-<h4 class="pl-6">📣 Loud articles: 📣</h4>
+<h5 class="pl-6">📣 Loud articles: 📣</h4>
 <ul class="list-disc">
   <% @articles.each do |article| %>
     <% if article.status == "loud" %>
@@ -50,7 +50,7 @@ Our wonderful coffee blog has:
   <% end %>
 </ul>
 <br>
-<h4 class="pl-6">🔇 subdued articles: 🔇</h4>
+<h5 class="pl-6">🔇 subdued articles: 🔇</h4>
 <ul class="list-disc">
   <% @articles.each do |article| %>
     <% if article.status == "subdued" %>
@@ -63,5 +63,5 @@ Our wonderful coffee blog has:
 <br>
 <br>
 <h3>v0.0.5</h3>  
-<h3 class="text-blue-500 underline"><a href="https://github.com/airbr"> The code for this blog, and my Github </a></h3>
+<h3 class="text-black underline"><a href="https://github.com/airbr"> The code for this blog, and my Github </a></h3>
 </div>
