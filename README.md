@@ -30,4 +30,18 @@ CRUD actions on a Article model, comparable to a post, following common patterns
 Ability to post comments associated with the article, and like articles as a logged in user
 
 
+### Future development goals
+
+* Allow editable usernames instead of displaying email address
+* Setup password reset mailer (pretty important...)
+* Add 1-5 star rating (duplicate of likes?)
+* Ability to choose or upload images, either as avatars or on posts
+
+
+
+
+
+
+
+
 
