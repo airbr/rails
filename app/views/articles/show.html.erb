@@ -8,7 +8,14 @@
 </audio>
 <% end %>
 
-<h1>Author: <%= @author.email %></h1>
+<h1>Author: 
+<% if @author.username? %>
+<%= @author.username %>
+<% else %>
+This post was made by one of the earliest users before usernames existed!
+<% end %>
+
+</h1>
 <br>
 <h1>TITLE: <%= @article.title %></h1>
 <br>

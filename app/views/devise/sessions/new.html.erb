@@ -1,17 +1,9 @@
-<div class="flex flex-col items-center">
-
 <h2>Log in</h2>
 
-<p class="notice"><%= flash[:notice] %></p>
-<p class="alert"><%= flash[:alert] %></p>
-<br>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
@@ -26,10 +18,9 @@
     </div>
   <% end %>
 
-  <div class="actions m-4 bg-slate-200 text-center">
+  <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-</div>

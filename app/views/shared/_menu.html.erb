@@ -6,6 +6,10 @@
 <% if current_user %>
   <div class="">
   <span class="px-1"><%= current_user.email %></span>
+  <% if current_user.username? %>
+  <br>
+  <b>Username:</b><span class="px-1"><%= current_user.username %></span>
+  <% end %>
   <br>
   <span class="px-1"><%= link_to "Sign out", destroy_user_session_path, method: :get  %></span>
   </div>
